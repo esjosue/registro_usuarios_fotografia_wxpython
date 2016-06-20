@@ -33,3 +33,9 @@ DEPENDENCIAS PARA EJECUTAR ESTE SOTFWARE
 	-Seleccionar base de datos.
 	-Dar click en el menu de opciones en "SQL"
 	-Escoger el archivo: tabla_usuarios.sql y ejecutar sentencia.
+	
+6- Instalar Opencv(Para poder tomar fotografias)
+	-comandos: 
+			apt-get install libopencv-*
+			apt-get isntall python-opencv
+			apt-get install python-numpy
