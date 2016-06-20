@@ -199,7 +199,10 @@ class registro ( wx.Frame ):
 	
 	# Virtual event handlers, overide them in your derived class
 	def guardar( self, event ):
+		self.nombre = str(self.txt_nombre.GetValue())
+		
 		event.Skip()
+		print self.nombre
 	
 	def cancelar( self, event ):
 		event.Skip()
