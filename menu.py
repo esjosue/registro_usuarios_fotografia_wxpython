@@ -201,7 +201,7 @@ class registro ( wx.Frame ):
 	def guardar( self, event ):
 		self.nombre = str(self.txt_nombre.GetValue())
 		self.apellido = str(self.txt_apellido.GetValue()) 
-       # self.direc = str(self.txt_dir.GetValue()) 
+        self.direc = str(self.txt_dir.GetValue()) 
         self.telefono = str(self.txt_tel.GetValue()) 
         self.dui = str(self.txt_dui.GetValue()) 
         self.nit = str(self.txt_nit.GetValue()) 
