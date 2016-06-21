@@ -73,7 +73,7 @@ class MyFrame2 ( wx.Frame ):
 		self.m_button2.Bind( wx.EVT_BUTTON, self.abrir_busqueda )
 		
 		self.postgres = conn.Database()
-	
+		
 	def __del__( self ):
 		pass
 	
@@ -200,16 +200,21 @@ class registro ( wx.Frame ):
 	# Virtual event handlers, overide them in your derived class
 	def guardar( self, event ):
 		self.nombre = str(self.txt_nombre.GetValue())
-		
-		event.Skip()
-		print self.nombre
+		self.apellido = str(self.txt_apellido.GetValue()) 
+       # self.direc = str(self.txt_dir.GetValue()) 
+        self.telefono = str(self.txt_tel.GetValue()) 
+        self.dui = str(self.txt_dui.GetValue()) 
+        self.nit = str(self.txt_nit.GetValue()) 
+        sql="INSERT INTO usuarios(nombre,apellido,direccion,telefono,dui,nit) VALUES ('"+self.nombre+"', '"+self.apellido+"','"+self.direccion+"', '"+self.telefono+"', '"+self.dui+"', '"+self.nit+"')"
+        data_param=("")
+        typesql='I'
+        self.dial = wx.MessageDialog(None, 'DATOS GUARDADOS', 'Info', wx.OK|wx.CENTRE)
+        if postgres.query(sql,data_param,typesql):
+			 self.dial.ShowModal()
 	
-	def cancelar( self, event ):
-		event.Skip()
+    #def cancelar( self, event ):
+	#	event.Skip()
 	
-
-
-
 class MyFrame3 ( wx.Frame ):
 	
 	def __init__( self, parent ):
